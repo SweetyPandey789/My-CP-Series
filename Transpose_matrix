@@ -1,0 +1,45 @@
+//FIND TRANSPOSE OF MATRIX
+import java.util.Scanner;
+public class Matrix{
+public static void printmatrix(int [][]matrix,int row,int column){
+
+for(int i=0;i<row;i++){
+for(int j=0;j<column;j++){
+System.out.print(matrix[i][j] +" ");
+}
+System.out.println();
+}}
+
+public static int [][]findtranspose(int [][]matrix,int row,int column)
+{
+int[][] ans=new int[column][row];
+for(int i=0;i<column;i++){
+for(int j=0;j<row;j++){
+ans[i][j]=matrix[j][i];
+}
+}
+return ans;
+}
+
+
+public static void main(String args[]){
+int matrix[][]=new int[4][4];
+
+Scanner sc=new Scanner(System.in);
+System.out.println("Enter the number of rows");
+int row=sc.nextInt();
+System.out.println("Enter the number of columns");
+int column=sc.nextInt();
+int totalelement=row*column;
+System.out.println("Enter the number of total element in matrix"+totalelement);
+System.out.println("Enter the number of matrix");
+for(int i=0;i<row;i++){
+for(int j=0;j<column;j++){
+matrix[i][j]=sc.nextInt();
+}System.out.println();
+}
+printmatrix(matrix,row,column);
+System.out.println("Transpose of a matrix");
+int ans[][]=findtranspose(matrix,row,column);
+printmatrix(ans,row,column);
+}}

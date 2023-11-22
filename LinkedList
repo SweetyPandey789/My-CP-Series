@@ -1,0 +1,66 @@
+//Linkedlist
+public class LinkedList{
+public static class Node{
+int data;
+Node next;
+Node (int data){
+this.data=data;
+}
+}
+/*
+//Simple display with for loop
+public static void display(Node a){
+Node temp=a;
+for(int i=1;i<=5;i++){
+System.out.print(temp.data+" ");
+temp=temp.next;
+}
+}
+*/
+//Display of result by while loop
+public static void display(Node head)
+{
+Node temp=head;
+while(temp!=null){
+System.out.print(temp.data+" ");
+temp=temp.next;
+}}
+// Calculating the length of node
+public static int length(Node head){
+int count=0;
+while(head!=null){
+count++;
+head=head.next;
+}
+return count;
+}
+
+public static void main(String args[])
+{
+Node a=new Node(1);
+Node b=new Node(2);
+Node c=new Node(3);
+Node d=new Node(4);
+Node e=new Node(5);
+Node f=new Node(6);
+a.next=b;
+b.next=c;
+c.next=d;
+d.next=e;
+e.next=f;
+System.out.println("Linkedlist are: ");
+/*
+System.out.print(a.data+" ");
+System.out.print(b.data+" ");
+System.out.print(c.data+" ");
+System.out.print(d.data+" ");
+System.out.print(e.data+" ");
+System.out.print(f.data+" ");*/
+display(a);
+System.out.println();
+System.out.println("Length of linkedlist are:"+length(a));
+//display(a);
+
+
+}
+}

@@ -1,0 +1,68 @@
+import java.util.Scanner;
+import java.util.Stack;
+class Solution {
+    public static int largestRectangleArea(int[] heights) {
+       int n=heights.length;
+       Stack<Integer> st=new Stack<>();
+       int [] nse=new int [n];
+       int [] pse=new int [n];
+       //Calculate nextsmall element
+       st.push(n-1);
+       //index
+         nse[n-1]=n;
+         int i;
+         int max=-1;
+       for( i=n-2;i>=0;i--)
+       {
+           while(st.size()>0 && heights[st.peek()]>=heights[i]){
+               st.pop();
+
+           }
+           if(st.size()==0)
+           nse[i]=n;
+           else
+           nse[i]=st.peek();
+           st.push(i);
+           }
+           //emptying stack
+           while(st.size()>0){
+           st.pop();
+           }
+           //Calculate previousSmall element
+           st.push(0);
+           pse[0]=-1;
+           for( i=1;i<=n-1;i++)
+           {
+               while(st.size()>0 && heights[st.peek()] > heights[i])
+               {
+                   st.pop();
+               }
+               if(st.size()==0)
+               pse[i]=-1;
+               else pse[i]=st.peek();
+               st.push(i);
+
+           }
+           //Maximum area of rectangle
+           
+           for(i=0;i<n;i++)
+           {
+               int area=heights[i]*(nse[i]-pse[i]-1);
+               max=Math.max(max,area);
+            }
+         return max;
+    }
+public static void main(String args[])
+{Scanner sc=new Scanner(System.in);
+System.out.println("Enter the value:");
+int n=sc.nextInt();
+int heights[]=new int [n];
+System.out.println("Enter the array element");
+for(int i=0;i<heights.length;i++)
+{
+heights[i]=sc.nextInt();
+}
+System.out.println("Largest Rectangle in Histogram");
+System.out.println(largestRectangleArea(heights));
+}
+}

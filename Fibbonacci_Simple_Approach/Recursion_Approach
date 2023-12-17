@@ -1,0 +1,26 @@
+//Fibbonacci Sequence
+import java.util.Scanner;
+public class Fibbonacci{
+//CASE 2- Recursion method to find fibbonacci series
+public static int fibbo(int num)
+{
+int f1=0,f2=1;
+int f3;
+if(num<=1)
+{
+return num;
+}
+return fibbo(num-1)+fibbo(num-2);
+}
+
+
+public static void main(String args[])
+{
+Scanner sc=new Scanner(System.in);
+int num=sc.nextInt();
+System.out.println("Recursion method "+fibbo(num));
+}
+}
+/*Time Complexity =Exponential time 2^n
+Space Complexity=O(1)
+*/

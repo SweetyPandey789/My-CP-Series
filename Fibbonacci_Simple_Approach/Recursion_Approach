@@ -22,5 +22,5 @@ System.out.println("Recursion method "+fibbo(num));
 }
 }
 /*Time Complexity =Exponential time 2^n
-Space Complexity=O(1)
+Space Complexity=O(n)
 */

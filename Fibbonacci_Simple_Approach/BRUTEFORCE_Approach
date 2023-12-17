@@ -19,7 +19,8 @@ f2=f3;
 return f2;
 }
 
-
+/*Time Complexity=O(n)
+Space Complexity=O(1)*/
 
 public static void main(String args[])
 {

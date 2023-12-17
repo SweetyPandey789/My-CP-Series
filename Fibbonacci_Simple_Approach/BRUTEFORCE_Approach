@@ -1,0 +1,30 @@
+//Fibbonacci Sequence
+import java.util.Scanner;
+public class Fibbonacci{
+//CASE 1- Simple method to find fibbonacci series
+public static int fibbo(int num)
+{
+int f1=0,f2=1;
+int f3;
+if(num==0)
+{
+return num;
+}
+for(int i=2;i<=num;i++)
+{
+f3=f1+f2;
+f1=f2;
+f2=f3;
+}
+return f2;
+}
+
+
+
+public static void main(String args[])
+{
+Scanner sc=new Scanner(System.in);
+int num=sc.nextInt();
+System.out.println("Simple method"+fibbo(num));
+}
+}
